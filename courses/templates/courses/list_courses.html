@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>รายการวิชา</title>
+</head>
+<body>
+    <h1>รายการวิชาในหลักสูตร</h1>
+    <table border="1">
+        <tr>
+            <th>รหัสวิชา</th>
+            <th>ชื่อวิชา</th>
+            <th>หน่วยกิต</th>
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.code }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.credit }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_course' %}">เพิ่มรายวิชาใหม่</a>
+</body>
+</html>

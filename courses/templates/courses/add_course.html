@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>เพิ่มรายวิชา</title>
+</head>
+<body>
+    <h1>เพิ่มรายวิชาในหลักสูตร</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>รหัสวิชา:</label>
+            <input type="text" name="code" required>
+        </div>
+        <div>
+            <label>ชื่อวิชา:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div>
+            <label>หน่วยกิต:</label>
+            <input type="number" name="credit" required>
+        </div>
+        <button type="submit">บันทึก</button>
+    </form>
+    <a href="{% url 'list_courses' %}">ดูรายการวิชาทั้งหมด</a>
+</body>
+</html>
